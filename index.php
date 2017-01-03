@@ -21,7 +21,9 @@
             <span class="error">* <?php current_val("tip_percentErr"); ?></span>
             <br><br>
 
-
+            <?php
+                include "percentRadios.php"
+            ?> <br><br>
 
 
             <label>
