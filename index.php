@@ -2,7 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tip Calculator</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css" />
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
 
     <body>
@@ -43,9 +49,11 @@
             <br><br>
 
 
-            <input type="submit" name="submit"> <br>
+            <!-- <input type="submit" name="submit"> <br> -->
             
-            
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" name="submit">
+              Button
+            </button>
         </form>
 
 
