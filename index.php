@@ -8,37 +8,7 @@
     <body>
 
         <?php 
-            function current_val($input) {
-                // default input values
-                switch (true) {
-                    // ISSUE: will take on split's value if placed at the end
-                    case $input == "billErr" || $input == "tip_percentErr" || $input == "splitErr":
-                        $val = "";
-                        break;
-
-                    case $input == "bill":
-                        $val = 10;
-                        break;
-                    case $input == "tip_percent_custom":
-                        $val = 18;
-                        break;
-                    case "split":
-                        $val = 1;
-                        break;
-
-                    default:
-                        echo "something is wrong";
-                        break;
-                }
-
-                // override default with POSTed value
-                if ( isset($_POST[$input]) ) {
-                    $val = $_POST[$input];
-                }
-
-                echo $val;
-            }
-
+            include "output.php";
          ?>
 
 
@@ -47,13 +17,13 @@
         <form method="POST">
 
             <label>Bill subtotal: $
-                <input type="text" name="bill" placeholder="Your Bill Amount" value="<?php current_val("bill"); ?>">
+                <input type="text" name="bill" placeholder="Your Bill Amount" value="<?php echo "$bill"; ?>">
             </label>
-            <span class="error">* <?php current_val("billErr"); ?></span>
+            <span class="error">* <?php echo "$billErr"; ?></span>
             <br><br>
 
             Tip Percentage:
-            <span class="error">* <?php current_val("tip_percentErr"); ?></span>
+            <span class="error">* <?php echo "$tip_percentErr"; ?></span>
             <br><br>
 
             <?php
@@ -63,13 +33,13 @@
 
             <label>
                 <input type="radio" name="tip_percent"> Custom:
-            </label> <br><br>
-                <input type="text" name="tip_percent_custom" placeholder="eg. 18.5" value="<?php current_val("tip_percent_custom"); ?>" >%
-                <span class="error">* <?php current_val("tip_percentErr"); ?></span>
-            
+            </label> 
+                <input type="text" name="tip_percent_custom" placeholder="eg. 18.5" value="<?php echo "$tip_percent_custom"; ?>" >%
+                <span class="error">* <?php echo "$tip_percentErr"; ?></span>
+            <br><br>
 
-            <label>Split: <input type="text" name="split" value="<?php current_val("split"); ?>"> person(s) </label>
-            <span class="error"><?php current_val("splitErr"); ?></span>
+            <label>Split: <input type="text" name="split" value="<?php echo "$split"; ?>"> person(s) </label>
+            <span class="error"><?php echo "$splitErr"; ?></span>
             <br><br>
 
 
@@ -81,7 +51,13 @@
 
         <?php
             if ( isset($_POST["submit"]) ) { 
-                include "output.php";
+                echo "
+                    <br> Total Tip: $total_tip
+                    <br> Total (With Tip): $total
+                    <br> Tip Per Person: $tip_each
+                    <br> Total Per Person: $total_each
+                    ";
+
             }
 
         ?>

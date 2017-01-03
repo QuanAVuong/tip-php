@@ -1,8 +1,8 @@
 <?php
 
-// $billErr = $tip_percentErr = $splitErr = "";
-// list( $bill, $tip_percent, $split ) = array(0, 15, 1);
-// $total = $total_tip = $total_each = $tip_each = 0;
+$billErr = $tip_percentErr = $splitErr = "";
+list( $bill, $tip_percent, $split ) = array(0, 15, 1);
+$total = $total_tip = $total_each = $tip_each = 0;
 
 function process_input($data) { 
   $data = trim($data);
@@ -48,14 +48,5 @@ $total_tip = $tip_percent/100 * $bill;
 $total = $bill + $total_tip;
 $tip_each = $total_tip/$split;
 $total_each = $total/$split;
-
-
-echo "
-    <br> Total Tip: $total_tip
-    <br> Total (With Tip): $total
-    <br> Tip Per Person: $tip_each
-    <br> Total Per Person: $total_each
-    ";
-
 
 ?>
