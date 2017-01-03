@@ -31,12 +31,12 @@
             ?> <br><br>
 
 
-            <label>
+<!--             <label>
                 <input type="radio" name="tip_percent"> Custom:
             </label> 
                 <input type="text" name="tip_percent_custom" placeholder="eg. 18.5" value="<?php echo "$tip_percent_custom"; ?>" >%
                 <span class="error">* <?php echo "$tip_percentErr"; ?></span>
-            <br><br>
+            <br><br> -->
 
             <label>Split: <input type="text" name="split" value="<?php echo "$split"; ?>"> person(s) </label>
             <span class="error"><?php echo "$splitErr"; ?></span>
@@ -50,14 +50,19 @@
 
 
         <?php
-            if ( isset($_POST["submit"]) ) { 
-                echo "
-                    <br> Total Tip: $total_tip
-                    <br> Total (With Tip): $total
-                    <br> Tip Per Person: $tip_each
-                    <br> Total Per Person: $total_each
-                    ";
+            if ( isset($_POST["submit"]) ) {
 
+                // if ( !isset($billErr) && !isset($tip_percentErr) && !isset($splitErr) ) {
+                if ( empty($arrErr) ) {
+                    echo "
+                        <br> Total Tip: $total_tip
+                        <br> Total (With Tip): $total
+                        <br> Tip Per Person: $tip_each
+                        <br> Total Per Person: $total_each
+                        ";
+
+                }
+                
             }
 
         ?>
