@@ -7,6 +7,41 @@
 
     <body>
 
+        <?php 
+            function current_val($input) {
+                // default input values
+                switch (true) {
+                    // ISSUE: will take on split's value if placed at the end
+                    case $input == "billErr" || $input == "tip_percentErr" || $input == "splitErr":
+                        $val = "";
+                        break;
+
+                    case $input == "bill":
+                        $val = 10;
+                        break;
+                    case $input == "tip_percent_custom":
+                        $val = 18;
+                        break;
+                    case "split":
+                        $val = 1;
+                        break;
+
+                    default:
+                        echo "something is wrong";
+                        break;
+                }
+
+                // override default with POSTed value
+                if ( isset($_POST[$input]) ) {
+                    $val = $_POST[$input];
+                }
+
+                echo $val;
+            }
+
+         ?>
+
+
         <h1>Tip Calculator</h1>
 
         <form method="POST">
