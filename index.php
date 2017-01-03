@@ -79,6 +79,14 @@
         </form>
 
 
+        <?php
+            if ( isset($_POST["submit"]) ) { 
+                include "output.php";
+            }
+
+        ?>
+
+
     </body>
 
 </html>
