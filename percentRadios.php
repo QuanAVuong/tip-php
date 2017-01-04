@@ -1,4 +1,5 @@
 <?php 
+    // if($percent === 15) echo 'checked';
 
 	for($percent = 10 ; $percent <= 20; $percent += 5) {
 		// if($percent === 15) {
@@ -10,7 +11,10 @@
 		// } else {
 			echo "
 					<label> 
-						<input type='radio' name='tip_percent' value='" . $percent . "'> " . $percent . "%
+						<input type='radio' 
+                        name='tip_percent' 
+                        value='" . $percent . "' 
+                        > " . $percent . "%
 					</label>
 				";
 		// }
@@ -18,5 +22,3 @@
 	}
 
 ?>
-
-	

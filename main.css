@@ -1,0 +1,57 @@
+.demo-layout-transparent {
+  background: url('http://futuristiqentertainment.com/wp-content/uploads/2016/08/background-bokeh-big4.png') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+#form {
+	margin: auto;
+	padding: 10px 20px;
+	z-index: 1;
+	background: rgba(100, 100, 255, .8);
+	border-radius: 0.1;
+	color: white;
+	/*background: indigo;*/
+	/*opacity: 0.8;*/
+}
+
+.error {
+	color: red;
+}
+
+/*
+
+    <!-- Simple header with fixed tabs. -->
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+                        mdl-layout--fixed-tabs">
+              <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                  <!-- Title -->
+                  <span class="mdl-layout-title">Tip Calculator</span>
+                </div>
+                <!-- Tabs -->
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                  <a href="#fixed-tab-1" class="mdl-layout__tab is-active">About</a>
+                  <a href="#fixed-tab-2" class="mdl-layout__tab">Calculator</a>
+                  <a href="#fixed-tab-3" class="mdl-layout__tab">Comments</a>
+                </div>
+              </header>
+              <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Drawer</span>
+              </div>
+              <main class="mdl-layout__content">
+                <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                  <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                  <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                  <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+              </main>
+            </div>*/
