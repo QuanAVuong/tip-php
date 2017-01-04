@@ -57,7 +57,7 @@
             <div id="form"> <!-- ==================== F O R M ==================== -->
                 <?php 
                     include "output.php";
-                    echo "index L60: tip_percent = $tip_percent; tip_percent_custom = $tip_percent_custom";
+                    // echo "index L60: tip_percent = $tip_percent; tip_percent_custom = $tip_percent_custom";
                  ?>
 
 
@@ -86,7 +86,7 @@
                         <input type="radio" name="tip_percent" id="custom_radio" value="
                                 <?php
                                     $tip_percent = $tip_percent_custom;  
-                                    echo $tip_percent; 
+                                    echo $tip_percent_custom; 
                                 ?>" 
                         > Custom:
                     </label> 

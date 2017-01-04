@@ -31,9 +31,9 @@
 	  /** Make it look pretty **/
 	  display: block;
 	  background: rgba(100, 255, 255, .85);
-	  color: #eee;
+	  color: #55a;
 	  /*padding: 7em 2em;*/
-	  padding: 0px 30px 100px 30px;
+	  padding: 0px 30px 80px 30px;
 	  border: 0;
 	  cursor: pointer;
 	  font-size: 1.2em;
@@ -43,7 +43,7 @@
 
 h2 {
 	/*margin: 50px;*/
-	margin: 50px auto;
+	margin: 30px auto;
 	text-align: center;
 }
 
