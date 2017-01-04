@@ -56,7 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $total_tip = $tip_percent/100 * $bill;
 $total = $bill + $total_tip;
-$tip_each = $total_tip/$split;
-$total_each = $total/$split;
+if ( $split > 0 ) {
+    $tip_each = $total_tip/$split;
+    $total_each = $total/$split;
+}
 
 ?>

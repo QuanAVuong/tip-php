@@ -24,7 +24,7 @@
 
         <div class="mdl-layout mdl-js-layout">
 
-
+            <!-- TRANSPARENT LAYOUT -->
             <div class="demo-layout-transparent mdl-layout mdl-js-layout">
               <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
@@ -51,7 +51,7 @@
               <main class="mdl-layout__content">
               </main>
             </div>
-
+            <!-- END TRANSPARENT LAYOUT -->
 
 
             <div id="form"> <!-- M==================== F O R M ==================== -->
@@ -60,18 +60,20 @@
                  ?>
 
 
-                <h2 .mdl-typography--display-1 >Tipping...</h2>
+                <h2>Tipping...</h2>
 
                 <form method="POST">
 
                     <label>Bill subtotal: $
                         <input type="text" name="bill" placeholder="Your Bill Amount" value="<?php echo "$bill"; ?>">
-                    </label>
-                    <span class="error">* <?php echo "$billErr"; ?></span>
-                    <br><br>
+                        <span class="error">*</span>
+                    </label> <br>
+                    <span class="error"> <?php echo "$billErr"; ?> </span>
+                    <br>
 
-                    Tip Percentage:
-                    <span class="error">* <?php echo "$tip_percentErr"; ?></span>
+
+                    <label>Tip Percentage:</label>
+                    <span class="error"> * <?php echo "$tip_percentErr"; ?> </span>
                     <br><br>
 
                     <?php
@@ -79,23 +81,22 @@
                     ?> <br><br>
 
 
-        <!--             <label>
-                        <input type="radio" name="tip_percent"> Custom:
-                    </label> 
-                        <input type="text" name="tip_percent_custom" placeholder="eg. 18.5" value="<?php echo "$tip_percent_custom"; ?>" >%
-                        <span class="error">* <?php echo "$tip_percentErr"; ?></span>
-                    <br><br> -->
 
-                    <label>Split: <input type="text" name="split" value="<?php echo "$split"; ?>"> person(s) </label>
+
+                    <label>Split: <input type="text" name="split" placeholder="by default 1" value="<?php echo "$split"; ?>"> person(s) </label> <br>
                     <span class="error"><?php echo "$splitErr"; ?></span>
-                    <br><br>
+                    <br>
 
 
                     <!-- <input type="submit" name="submit"> <br> -->
                     
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" name="submit">
-                      Calculate
-                    </button>
+                    
+                    <div id=calc>
+                        <button class="button" name="submit">
+                          Calculate
+                        </button>
+                    </div>
+
                 </form>
 
 
@@ -105,10 +106,12 @@
                         // if ( !isset($billErr) && !isset($tip_percentErr) && !isset($splitErr) ) {
                         if ( empty($arrErr) ) {
                             echo "
-                                <br> Total Tip: $ $total_tip
-                                <br> Total (With Tip): $ $total
-                                <br> Tip Per Person: $ $tip_each
-                                <br> Total Per Person: $ $total_each
+                                    <div id='output'>
+                                        <br> Total Tip: $<span class='numbers'>$total_tip</span>
+                                        <br> Total (With Tip): $<span class='numbers'>$total</span>
+                                        <br> Tip Per Person: $<span class='numbers'>$tip_each</span>
+                                        <br> Total Per Person: $<span class='numbers'>$total_each</span>
+                                    </div>
                                 ";
 
                         }
