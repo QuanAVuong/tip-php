@@ -10,7 +10,7 @@ function process_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);    // optional, since PHP_SELF is not used
-    return $data;
+    return $data; // string ?
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

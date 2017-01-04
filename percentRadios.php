@@ -1,19 +1,15 @@
-<?php 
-    // if($percent === 15) echo 'checked';
+<?php
+	// echo "radios.php L10: current tip_percent is $tip_percent";
 
 	for($percent = 10 ; $percent <= 20; $percent += 5) {
-		// if($percent === 15) {
-		// 	echo "
-		// 			<label> 
-		// 				<input type='radio' name='tip_percent' value='" . $percent . "' checked> " . $percent . "%
-		// 			</label>
-		// 		";
-		// } else {
+			$checked = "";
+    		if($percent == $tip_percent) $checked = 'checked'; // == otherwise false (number vs strings)
 			echo "
 					<label> 
 						<input type='radio' 
-                        name='tip_percent' 
-                        value='" . $percent . "' 
+		                        name='tip_percent' 
+		                        value='" . $percent . "'
+		                        " . $checked . "  
                         > " . $percent . "%
 					</label>
 				";

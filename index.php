@@ -29,7 +29,7 @@
               <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
                   <!-- Title -->
-                  <span class="mdl-layout-title">Tip Calculator App</span>
+                  <span class="mdl-layout-title">Tippy</span>
                   <!-- Add spacer, to align navigation to the right -->
                   <div class="mdl-layout-spacer"></div>
                   <!-- Navigation -->
@@ -54,9 +54,10 @@
             <!-- END TRANSPARENT LAYOUT -->
 
 
-            <div id="form"> <!-- M==================== F O R M ==================== -->
+            <div id="form"> <!-- ==================== F O R M ==================== -->
                 <?php 
                     include "output.php";
+                    // echo "L60: current tip_percent is $tip_percent";
                  ?>
 
 
@@ -77,10 +78,13 @@
                     <br><br>
 
                     <?php
-                        include "percentRadios.php"
-                    ?> <br><br>
+                        include "percentRadios.php";
+                        // echo "L82: current tip_percent is $tip_percent";
 
+                    ?> <br>
 
+        
+                    
 
 
                     <label>Split: <input type="text" name="split" placeholder="by default 1" value="<?php echo "$split"; ?>"> person(s) </label> <br>
