@@ -1,5 +1,6 @@
 <?php
-	// echo "radios.php L10: current tip_percent is $tip_percent";
+    // echo "...radios:L2: tip_percent = $tip_percent; tip_percent_custom = $tip_percent_custom <br>";
+
 
 	for($percent = 10 ; $percent <= 20; $percent += 5) {
 			$checked = "";
@@ -14,7 +15,11 @@
 					</label>
 				";
 		// }
+	// echo "<br>in checked:" . var_dump($checked) . "";
 
 	}
+
+	// echo "<br>out checked:" . var_dump($checked) . "";
+	
 
 ?>

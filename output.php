@@ -1,7 +1,7 @@
 <?php
 
 $billErr = $tip_percentErr = $splitErr = "";
-list( $bill, $tip_percent, $split ) = array(10, 15, 1);
+list( $bill, $tip_percent, $tip_percent_custom, $split ) = array(10, 15, 18, 1);
 $total = $total_tip = $total_each = $tip_each = 0;
 $arrErr = array();
 
@@ -40,6 +40,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    if ( empty($_POST["tip_percent_custom"])) { // $_POST["tip_percent"] == $tip_percent_custom && 
+        $tip_percentErr = "required";
+        $arrErr[] = $tip_percentErr; 
+    } else {
+        $tip_percent_custom = process_input($_POST["tip_percent_custom"]);
+
+        if (!preg_match("/^\d+\.?\d+$/", $tip_percent_custom)) {
+            $tip_percentErr = "Only a positive decimal number please eg. 18.5";
+            $arrErr[] = $tip_percentErr; 
+        }
+    }
+
+
+
 
     if (empty($_POST["split"])) {
         $splitErr = "required";
@@ -55,7 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $total_tip = $tip_percent/100 * $bill;
+
 $total = $bill + $total_tip;
+
 if ( $split > 0 ) {
     $tip_each = $total_tip/$split;
     $total_each = $total/$split;

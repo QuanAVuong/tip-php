@@ -57,14 +57,14 @@
             <div id="form"> <!-- ==================== F O R M ==================== -->
                 <?php 
                     include "output.php";
-                    // echo "L60: current tip_percent is $tip_percent";
+                    echo "index L60: tip_percent = $tip_percent; tip_percent_custom = $tip_percent_custom";
                  ?>
 
 
                 <h2>Tipping...</h2>
 
                 <form method="POST">
-
+                    <!-- INPUT: BILL -->
                     <label>Bill subtotal: $
                         <input type="text" name="bill" placeholder="Your Bill Amount" value="<?php echo "$bill"; ?>">
                         <span class="error">*</span>
@@ -73,20 +73,29 @@
                     <br>
 
 
+                    <!-- INPUT: TIP PERCENTAGE -->
                     <label>Tip Percentage:</label>
                     <span class="error"> * <?php echo "$tip_percentErr"; ?> </span>
                     <br><br>
 
                     <?php
                         include "percentRadios.php";
-                        // echo "L82: current tip_percent is $tip_percent";
-
                     ?> <br>
 
-        
-                    
+                    <label> <!-- CUSTOM TIP -->
+                        <input type="radio" name="tip_percent" id="custom_radio" value="
+                                <?php
+                                    $tip_percent = $tip_percent_custom;  
+                                    echo $tip_percent; 
+                                ?>" 
+                        > Custom:
+                    </label> 
+                        <input type="text" name="tip_percent_custom" placeholder="eg. 18.5" value="<?php echo $tip_percent_custom ?>" >%
+                        <span class="error"> * <?php echo "$tip_percentErr" ?></span>
+                    <br><br>
 
 
+                    <!-- INPUT: SPLIT -->
                     <label>Split: <input type="text" name="split" placeholder="by default 1" value="<?php echo "$split"; ?>"> person(s) </label> <br>
                     <span class="error"><?php echo "$splitErr"; ?></span>
                     <br>
