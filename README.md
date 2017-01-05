@@ -23,14 +23,14 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] Slider/Buttons to set tip percentage value without keyboard
-* [ ] 
+* [ ] Slider/Buttons to set amounts without keyboard
+* [ ] Save custom default values
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/ExDjwCC.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/ExDjwCC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
